@@ -8,6 +8,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from './reactnative/components/SplashScreen';
+import HomeScreen from './reactnative/components/HomeScreen';
 import TimerScreen from './reactnative/components/TimerScreen';
 
 const Stack = createStackNavigator();
@@ -20,6 +21,11 @@ const App = () => {
           name="SplashScreen"
           component={SplashScreen}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{ title : "Timer" }}
         />
         <Stack.Screen
           name="TimerScreen"

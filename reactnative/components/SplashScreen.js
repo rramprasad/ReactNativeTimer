@@ -9,7 +9,7 @@ const SplashScreen = ({ navigation }) => {
             //navigation.navigate('TimerScreen')
             navigation.dispatch(CommonActions.reset({
                 index : 0,
-                routes : [{name : 'TimerScreen'}]
+                routes : [{name : 'HomeScreen'}]
             }))
         }, 3000);
     })

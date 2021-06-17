@@ -12,6 +12,8 @@ target 'ReactNativeTimer' do
     :hermes_enabled => false
   )
 
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
   target 'ReactNativeTimerTests' do
     inherit! :complete
     # Pods for testing
