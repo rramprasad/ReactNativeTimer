@@ -25,7 +25,14 @@ const App = () => {
         <Stack.Screen
           name="HomeScreen"
           component={HomeScreen}
-          options={{ title : "Timer" }}
+          options={
+            { 
+              title : "Timer",
+              headerTintColor: "white",
+              headerStyle: {
+                backgroundColor : "#8BC34A"
+              } 
+            }}
         />
         <Stack.Screen
           name="TimerScreen"

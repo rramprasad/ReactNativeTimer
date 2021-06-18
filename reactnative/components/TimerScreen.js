@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import moment from 'moment';
 
@@ -26,6 +26,7 @@ const TimerScreen = ({ navigation, route}) => {
 
     return (
         <View style={styles.container}>
+        <View style={styles.timerProgressView}>
             <AnimatedCircularProgress
                 size={300}
                 width={20}
@@ -43,17 +44,16 @@ const TimerScreen = ({ navigation, route}) => {
                     )
                 }
             </AnimatedCircularProgress>
-
-            <Button
-               style={styles.cancelButton}
-               title="Cancel"
-               onPress={()=>{
-                   navigation.goBack()
-               }}
-            />
-
         </View>
-
+        <Pressable
+        style={styles.cancelPressable}
+           onPress={()=>{
+               navigation.goBack()
+           }}
+        >
+            <Text style={styles.cancelPressableText}>Cancel</Text>
+        </Pressable>
+        </View>
     )
 }
 
@@ -61,8 +61,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: 'white'
+    },
+    timerProgressView: {
+        alignSelf: 'center'
     },
     timerView:{
         flexDirection: 'row',
@@ -74,9 +76,18 @@ const styles = StyleSheet.create({
         fontSize: 50,
         color: '#8BC34A'
     },
-    cancelButton: {
-        width: 300,
-        backgroundColor: '#8BC34A'
+    cancelPressable: {
+        margin: 30,
+        height: 80,
+        backgroundColor: '#8BC34A',
+        borderRadius: 40,
+        justifyContent: "center"
+    },
+    cancelPressableText: {
+        fontWeight: 'bold',
+        fontSize: 30,
+        color: 'white',
+        textAlign: 'center'
     }
 })
 
